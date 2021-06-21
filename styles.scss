@@ -14,7 +14,7 @@
 }
 
 .contact {
-  position: fixed;
+  // position: fixed;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -210,6 +210,9 @@ star {
 
 .hide {
   opacity: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0px;
+  padding: 0px;
 }
 
 .fa {
@@ -218,3 +221,8 @@ star {
   color: white;
   padding-left: 10px;
 }
+
+// .fa:hover ~ .hide {
+//   opacity: none;
+//   color: white;
+// }
