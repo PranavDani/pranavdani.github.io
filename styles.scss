@@ -14,7 +14,7 @@
 }
 
 .contact {
-  position: fixed;
+  position: absolute;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -57,10 +57,19 @@ body {
       }
 
       &:nth-child(3) {
-        background: white;
-        mix-blend-mode: difference;
-        color: black;
+        background-color: var(--mainColor);
+        color: var(--secondaryColor);
+        // mix-blend-mode: difference;
+        // color: black;
         text-align: center;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 0px 200px;
       }
 
       &:nth-child(4) {
@@ -132,10 +141,10 @@ star {
   mix-blend-mode: difference;
 }
 
-.email-link:hover~.cursor {
-  transition: 0.1s;
-  transform: scale(3);
-}
+// body .container section .greeting-wrapper .email-link:hover~.cursor {
+//   transition: 0.1s;
+//   transform: scale(3);
+// }
 
 // glitchy text
 
@@ -330,5 +339,6 @@ star {
 
 .stand:hover {
   transform: scale(1.2);
+  color: orange;
   transition: 0.1s;
 }
