@@ -245,6 +245,11 @@ star {
   padding-left: 10px;
 }
 
+.fa:hover {
+  transform: scale(1.1);
+  transition: 0.1s;
+}
+
 .greeting-wrapper {
   // text-align: center;
   padding: 0px 100px;
@@ -321,4 +326,9 @@ star {
   letter-spacing: 0.1em;
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
+}
+
+.stand:hover {
+  transform: scale(1.2);
+  transition: 0.1s;
 }
