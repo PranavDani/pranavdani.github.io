@@ -296,3 +296,29 @@ star {
   width: 70%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.fixed-email {
+  position: absolute;
+  // list-style: none;
+  // bottom: 0;
+  right: 0;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 80vh;
+}
+
+.stand {
+  margin: 20px auto;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-family: monospace;
+  font-size: 2vh;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
