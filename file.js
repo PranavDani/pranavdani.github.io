@@ -29,9 +29,9 @@ document.getElementsByClassName("icon")[2].addEventListener("mouseover", () => {
 document.getElementsByClassName("icon")[3].addEventListener("mouseover", () => {
   document.getElementsByClassName("hide")[3].style.opacity = 1;
 });
-document.getElementsByClassName("icon")[4].addEventListener("mouseover", () => {
-  document.getElementsByClassName("hide")[4].style.opacity = 1;
-});
+// document.getElementsByClassName("icon")[4].addEventListener("mouseover", () => {
+//   document.getElementsByClassName("hide")[4].style.opacity = 1;
+// });
 
 document
   .getElementsByClassName("icon")[0]
@@ -55,8 +55,8 @@ document
   .addEventListener("mouseleave", () => {
     document.getElementsByClassName("hide")[3].style.opacity = 0;
   });
-document
-  .getElementsByClassName("icon")[4]
-  .addEventListener("mouseleave", () => {
-    document.getElementsByClassName("hide")[4].style.opacity = 0;
-  });
+// document
+//   .getElementsByClassName("icon")[4]
+//   .addEventListener("mouseleave", () => {
+//     document.getElementsByClassName("hide")[4].style.opacity = 0;
+//   });
