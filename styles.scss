@@ -61,7 +61,7 @@ body {
         color: var(--secondaryColor);
         // mix-blend-mode: difference;
         // color: black;
-        text-align: center;
+        // text-align: center;
         display: flex;
         -webkit-box-pack: center;
         justify-content: center;
@@ -74,7 +74,15 @@ body {
 
       &:nth-child(4) {
         background-color: var(--mainColor);
-        color: blue;
+        color: var(--secondaryColor);
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 0px 200px;
       }
 
       h1 {
