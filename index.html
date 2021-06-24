@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <title>Portfolio</title>
 </head>
@@ -151,14 +151,29 @@
       </div>
     </section>
     <section>
-      <span class="big">About Me</span>
-      <br>
-      <p class="content">Hello! My name is Pranav and I like to learn about new things that really make the gears inside
-        our head turn.<br> I have developed some interest in web development recently. I have worked with Flask and
-        Django Web-Apps. <br> Currently I am exploring and learning new things about technologies that interest me a
-        lot.</p>
-      <a href="https://drive.google.com/file/d/1bAKyi938ptvK0Ug95fwyzULcU_GZhrlS/view?usp=sharing"
-        class="email-link">Resume</a>
+      <div class="about">
+        <div>
+          <span class="big">About Me</span>
+          <br>
+          <p class="content">Hello! My name is Pranav and I like to learn about new things that really make the gears
+            inside
+            our head turn.<br> I have developed some interest in web development recently. I have worked with Flask and
+            Django Web-Apps. <br> Currently I am exploring and learning new things about technologies that interest me a
+            lot.<br>Here are a few technologies I've worked with:</p>
+          <ul class="skills-list">
+            <li>▹ Python</li>
+            <li>▹ Django</li>
+            <li>▹ Flask</li>
+            <li>▹ C++</li>
+            <li>▹ SQL</li>
+            <li>▹ Java</li>
+          </ul>
+
+          <a href="https://drive.google.com/file/d/1bAKyi938ptvK0Ug95fwyzULcU_GZhrlS/view?usp=sharing"
+            class="email-link">Resume</a>
+        </div>
+        <div class="image"></div>
+      </div>
     </section>
     <section>
       <span class="big">Some Things I've Built</span>
@@ -173,7 +188,7 @@
       cursor.style.top = e.pageY + "px";
     });
   </script>
-  <script src="file.js"></script>
+  <script src="assets/js/file.js"></script>
 </body>
 
 </html>

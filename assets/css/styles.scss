@@ -350,3 +350,19 @@ star {
   color: orange;
   transition: 0.1s;
 }
+
+.about {
+  display: flex;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+  list-style: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(255, 72, 0);
+  font-weight: 600;
+}
