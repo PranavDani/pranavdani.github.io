@@ -85,6 +85,20 @@ body {
         padding: 0px 200px;
       }
 
+      &:nth-child(5) {
+        background-color: var(--mainColor);
+        color: var(--secondaryColor);
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        flex-direction: column;
+        // align-items: flex-start;
+        min-height: 100vh;
+        // padding: 0px 200px;
+        text-align: center;
+      }
+
       h1 {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         font-size: 350%;
@@ -329,6 +343,10 @@ star {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.get-in-touch {
+  justify-content: center;
+}
+
 .fixed-email {
   position: absolute;
   // list-style: none;
@@ -365,6 +383,12 @@ star {
   display: flex;
 }
 
+.last {
+  color: #CCCCCC;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .skills-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
@@ -379,4 +403,49 @@ star {
 
 .budget {
   display: flex;
+}
+
+
+// typing effect
+.typing-effect p {
+  overflow: hidden;
+}
+
+.typing-effect p span.typed-text {
+  font-weight: normal;
+  color: white;
+}
+
+.typing-effect p span.blinker {
+  display: inline-block;
+  background-color: white;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+
+.typing-effect p span.blinker.typing {
+  animation: none;
+}
+
+@keyframes blink {
+  0% {
+    background-color: white;
+  }
+
+  49% {
+    background-color: white;
+  }
+
+  50% {
+    background-color: transparent;
+  }
+
+  99% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: white;
+  }
 }
