@@ -288,6 +288,16 @@ star {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.medium {
+
+  font-size: 8vh;
+  margin: 0px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
 .red {
   color: red;
 }
@@ -365,4 +375,8 @@ star {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(255, 72, 0);
   font-weight: 600;
+}
+
+.budget {
+  display: flex;
 }
