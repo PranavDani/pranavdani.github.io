@@ -60,3 +60,53 @@ document
 //   .addEventListener("mouseleave", () => {
 //     document.getElementsByClassName("hide")[4].style.opacity = 0;
 //   });
+
+
+document.getElementsByClassName("email-link")[0].addEventListener("mouseover", () => {
+  document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+});
+document.getElementsByClassName("email-link")[1].addEventListener("mouseover", () => {
+  document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+});
+document.getElementsByClassName("email-link")[2].addEventListener("mouseover", () => {
+  document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+});
+
+document
+  .getElementsByClassName("email-link")[0]
+  .addEventListener("mouseleave", () => {
+    document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+  });
+
+document
+  .getElementsByClassName("email-link")[1]
+  .addEventListener("mouseleave", () => {
+    document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+  });
+document
+  .getElementsByClassName("email-link")[2]
+  .addEventListener("mouseleave", () => {
+    document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+  });
+
+// budget tracker hover
+document.getElementsByClassName("medium")[0].addEventListener("mouseover", () => {
+  document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+});
+
+document
+  .getElementsByClassName("medium")[0]
+  .addEventListener("mouseleave", () => {
+    document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+  });
+
+// image
+document.getElementsByClassName("image")[0].addEventListener("mouseover", () => {
+  document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+});
+
+document
+  .getElementsByClassName("image")[0]
+  .addEventListener("mouseleave", () => {
+    document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+  });
