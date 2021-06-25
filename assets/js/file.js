@@ -64,49 +64,59 @@ document
 
 document.getElementsByClassName("email-link")[0].addEventListener("mouseover", () => {
   document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+  document.getElementsByClassName("cursor")[0].style.transition = "0.1s ease-out";
 });
 document.getElementsByClassName("email-link")[1].addEventListener("mouseover", () => {
   document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+  document.getElementsByClassName("cursor")[0].style.transition = "0.1s ease-out";
 });
 document.getElementsByClassName("email-link")[2].addEventListener("mouseover", () => {
   document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+  document.getElementsByClassName("cursor")[0].style.transition = "0.1s ease-out";
 });
 
 document
   .getElementsByClassName("email-link")[0]
   .addEventListener("mouseleave", () => {
     document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+    document.getElementsByClassName("cursor")[0].style.transition = "0s";
   });
 
 document
   .getElementsByClassName("email-link")[1]
   .addEventListener("mouseleave", () => {
     document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+    document.getElementsByClassName("cursor")[0].style.transition = "0s";
   });
 document
   .getElementsByClassName("email-link")[2]
   .addEventListener("mouseleave", () => {
     document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+    document.getElementsByClassName("cursor")[0].style.transition = "0s";
   });
 
 // budget tracker hover
 document.getElementsByClassName("medium")[0].addEventListener("mouseover", () => {
   document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+  document.getElementsByClassName("cursor")[0].style.transition = "0.1s ease-out";
 });
 
 document
   .getElementsByClassName("medium")[0]
   .addEventListener("mouseleave", () => {
     document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+    document.getElementsByClassName("cursor")[0].style.transition = "0s";
   });
 
 // image
 document.getElementsByClassName("image")[0].addEventListener("mouseover", () => {
   document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+  document.getElementsByClassName("cursor")[0].style.transition = "0.1s ease-out";
 });
 
 document
   .getElementsByClassName("image")[0]
   .addEventListener("mouseleave", () => {
     document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+    document.getElementsByClassName("cursor")[0].style.transition = "0s";
   });
