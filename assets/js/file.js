@@ -1,99 +1,26 @@
-// var i = 0;
-// for (i = 0; i < 2; i++) {
-//   document
-//     .getElementsByClassName("icon")
-//     [i].addEventListener("mouseover", () => {
-//       document.getElementsByClassName("hide")[i].style.opacity = 1;
-//     });
-//   document
-//     .getElementsByClassName("icon")
-//     [i].addEventListener("mouseleave", () => {
-//       document.getElementsByClassName("hide")[i].style.opacity = 0;
-//     });
-//   console.log(i);
-// }
-// console.log(document.getElementsByClassName("icon"));
-// console.log(document.getElementsByClassName("hide"));
+for (let i = 0; i < 4; i++) {
+  document
+    .getElementsByClassName("icon")[i].addEventListener("mouseover", () => {
+      document.getElementsByClassName("hide")[i].style.opacity = 1;
+    });
+  document
+    .getElementsByClassName("icon")[i].addEventListener("mouseleave", () => {
+      document.getElementsByClassName("hide")[i].style.opacity = 0;
+    });
+}
 
-// Weird issue
-
-document.getElementsByClassName("icon")[0].addEventListener("mouseover", () => {
-  document.getElementsByClassName("hide")[0].style.opacity = 1;
-});
-document.getElementsByClassName("icon")[1].addEventListener("mouseover", () => {
-  document.getElementsByClassName("hide")[1].style.opacity = 1;
-});
-document.getElementsByClassName("icon")[2].addEventListener("mouseover", () => {
-  document.getElementsByClassName("hide")[2].style.opacity = 1;
-});
-document.getElementsByClassName("icon")[3].addEventListener("mouseover", () => {
-  document.getElementsByClassName("hide")[3].style.opacity = 1;
-});
-// document.getElementsByClassName("icon")[4].addEventListener("mouseover", () => {
-//   document.getElementsByClassName("hide")[4].style.opacity = 1;
-// });
-
-document
-  .getElementsByClassName("icon")[0]
-  .addEventListener("mouseleave", () => {
-    document.getElementsByClassName("hide")[0].style.opacity = 0;
+for (let i = 0; i < 3; i++) {
+  document.getElementsByClassName("email-link")[i].addEventListener("mouseover", () => {
+    document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
+    document.getElementsByClassName("cursor")[0].style.transition = "0.1s ease-out";
   });
-document
-  .getElementsByClassName("icon")[1]
-  .addEventListener("mouseleave", () => {
-    document.getElementsByClassName("hide")[1].style.opacity = 0;
-  });
-
-document
-  .getElementsByClassName("icon")[2]
-  .addEventListener("mouseleave", () => {
-    document.getElementsByClassName("hide")[2].style.opacity = 0;
-  });
-
-document
-  .getElementsByClassName("icon")[3]
-  .addEventListener("mouseleave", () => {
-    document.getElementsByClassName("hide")[3].style.opacity = 0;
-  });
-// document
-//   .getElementsByClassName("icon")[4]
-//   .addEventListener("mouseleave", () => {
-//     document.getElementsByClassName("hide")[4].style.opacity = 0;
-//   });
-
-
-document.getElementsByClassName("email-link")[0].addEventListener("mouseover", () => {
-  document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
-  document.getElementsByClassName("cursor")[0].style.transition = "0.1s ease-out";
-});
-document.getElementsByClassName("email-link")[1].addEventListener("mouseover", () => {
-  document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
-  document.getElementsByClassName("cursor")[0].style.transition = "0.1s ease-out";
-});
-document.getElementsByClassName("email-link")[2].addEventListener("mouseover", () => {
-  document.getElementsByClassName("cursor")[0].style.transform = "scale(3)";
-  document.getElementsByClassName("cursor")[0].style.transition = "0.1s ease-out";
-});
-
-document
-  .getElementsByClassName("email-link")[0]
-  .addEventListener("mouseleave", () => {
-    document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
-    document.getElementsByClassName("cursor")[0].style.transition = "0s";
-  });
-
-document
-  .getElementsByClassName("email-link")[1]
-  .addEventListener("mouseleave", () => {
-    document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
-    document.getElementsByClassName("cursor")[0].style.transition = "0s";
-  });
-document
-  .getElementsByClassName("email-link")[2]
-  .addEventListener("mouseleave", () => {
-    document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
-    document.getElementsByClassName("cursor")[0].style.transition = "0s";
-  });
+  document
+    .getElementsByClassName("email-link")[i]
+    .addEventListener("mouseleave", () => {
+      document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
+      document.getElementsByClassName("cursor")[0].style.transition = "0s";
+    });
+}
 
 // budget tracker hover
 document.getElementsByClassName("medium")[0].addEventListener("mouseover", () => {
@@ -120,3 +47,12 @@ document
     document.getElementsByClassName("cursor")[0].style.transform = "translate(-50%, -50%)";
     document.getElementsByClassName("cursor")[0].style.transition = "0s";
   });
+
+
+for (let i = 0; i < 70; i++) {
+  var tag = document.createElement("star");
+  var text = document.createTextNode("");
+  tag.appendChild(text);
+  var element = document.getElementById("sky");
+  element.appendChild(tag);
+}
