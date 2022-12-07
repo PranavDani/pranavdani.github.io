@@ -94,7 +94,7 @@ body {
       }
 
       h1 {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 350%;
       }
     }
@@ -119,6 +119,7 @@ star {
   position: absolute;
   z-index: 0;
   animation: star linear infinite;
+  background-color: rgb(255 255 255 / 14%);
 
   @for $i from 1 through 70 {
     &:nth-child(#{$i}) {
@@ -157,7 +158,7 @@ star {
 
 .hide {
   opacity: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-top: -10px;
 }
 
@@ -178,7 +179,6 @@ star {
 }
 
 .small {
-
   margin: 0px 0px 30px 4px;
   color: white;
   font-family: 'Courier New', Courier, monospace;
@@ -194,13 +194,11 @@ star {
 }
 
 .medium {
-
   font-size: 8vh;
   margin: 0px;
   font-weight: 600;
   text-decoration: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
 .red {
@@ -228,7 +226,7 @@ star {
 }
 
 .content {
-  color: #CCCCCC;
+  color: #cccccc;
   font-weight: 400;
   width: 70%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -273,7 +271,7 @@ star {
 }
 
 .last {
-  color: #CCCCCC;
+  color: #cccccc;
   font-weight: 400;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -293,7 +291,6 @@ star {
 .budget {
   display: flex;
 }
-
 
 // typing effect
 .typing-effect p {
@@ -338,8 +335,6 @@ star {
     background-color: white;
   }
 }
-
-
 
 @media only screen and (max-width: 768px) {
   body {
@@ -411,7 +406,7 @@ star {
         }
 
         h1 {
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           font-size: 350%;
         }
 
@@ -445,7 +440,7 @@ star {
   .typing-effect p span.typed-text::before {
     font-weight: normal;
     color: white;
-    content: "\a";
+    content: '\a';
     white-space: pre;
   }
 
