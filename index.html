@@ -12,52 +12,49 @@
     />
     <title>Pranav Dani</title>
   </head>
-
   <body>
-    <!-- creating pages -->
-    <div class="container">
-      <sky id="sky"> </sky>
+    <div class="main-container">
+      <div id="sky-bg" class="sky-background"></div>
+
       <section>
-        <div class="greeting-wrapper">
-          <!-- <span class="small">Hi, my name is</span> -->
-          <br />
-          <span class="big">Coming Soon ...</span>
-          <br />
-          <!-- <div class="big red typing-effect">
-            <p>
-              I work with <span class="typed-text"></span
-              ><span class="blinker">&nbsp;</span>
+        <div class="intro-wrapper">
+          <div class="intro-content">
+            <span class="small">Hi, my name is</span>
+            <br />
+            <span class="big">Pranav Dani.</span>
+            <br /><br />
+            <p class="content">
+              I'm a Masters student in Computer Science at Stony Brook University based in New York, USA.
             </p>
-          </div> -->
-          <br /><br /><br />
-          <p class="content">
-            <!-- I'm a 21 year old First year Masters student in the field of
-            Computer Science based in New York, USA.<br />
-            I love to know more about Space, new technologies, I also like
-            clicking some good photos.
-            <br />
-            When I am not playing/(watching movie)/working, I am listening to
-            music (I also like to recreate some melodies myself.)
-          </p> -->
-            <br />
-            <a href="mailto:contact@pranavdani.com" class="email-link"
-              >Get In Touch</a
-            >
-          </p>
+            <p class="content">
+              I love computers. CPUs, OS, Distributed Systems, you name it. 
+            </p>
+            <p class="content">
+              I also love running, music and reading.
+            </p>
+              <br />
+            <a href="mailto:contact@pranavdani.com" class="email-link">Get In Touch</a>
+          </div>
+          <div class="profile-pic-wrapper">
+            <img
+              src="assets/images/pranav-dani.jpg"
+              alt="Pranav Dani"
+              class="profile-img"
+              loading="lazy"
+            />
+          </div>
         </div>
 
-        <ul class="contact">
+        <ul class="social-links">
           <li>
             <a
               href="https://github.com/PranavDani"
               class="icon"
               target="_blank"
-              alt="Pranav Dani GitHub"
-              rel="noopener"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="GitHub Pranav Dani"
             >
-              <i class="fa fa-github" aria-hidden="true"></i>
+              <img src="assets/images/icons/github.svg" alt="GitHub logo" loading="lazy" />
             </a>
             <p class="desc hide">GitHub</p>
           </li>
@@ -66,12 +63,10 @@
               href="https://www.linkedin.com/in/pranav-dani"
               class="icon"
               target="_blank"
-              alt="Pranav Dani LinkedIn"
-              rel="noopener"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="LinkedIn Pranav Dani"
             >
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <img src="assets/images/icons/linkedin.svg" alt="LinkedIn logo" loading="lazy" />
             </a>
             <p class="desc hide">LinkedIn</p>
           </li>
@@ -80,107 +75,128 @@
               href="https://twitter.com/PranavDani3"
               class="icon"
               target="_blank"
-              alt="Pranav Dani Twitter"
-              rel="noopener"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Twitter Pranav Dani"
             >
-              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <img src="assets/images/icons/twitter.svg" alt="Twitter logo" loading="lazy" />
             </a>
             <p class="desc hide">Twitter</p>
           </li>
-          <li>
-            <a
-              href="https://resume.pranavdani.com"
-              class="icon"
-              target="_blank"
-              alt="Pranav Dani Resume"
-              rel="noopener"
-              rel="noreferrer"
-              aria-label="Resume Pranav Dani"
-            >
-              <i class="fa fa-file-text" aria-hidden="true"></i>
-            </a>
-            <p class="desc hide">Resume</p>
-          </li>
         </ul>
-        <div class="fixed-email">
-          <a href="mailto:contact@pranavdani.com" class="stand"
-            >contact@pranavdani.com</a
-          >
+
+        <div class="fixed-email-section">
+          <a href="mailto:contact@pranavdani.com" class="stand">
+            contact@pranavdani.com
+          </a>
         </div>
       </section>
+
       <section>
         <div class="about">
           <div>
             <span class="big">About Me</span>
             <br /><br />
-            <!-- <p class="content">
-              Hello! My name is Pranav and I like to learn about new things that
-              really make the gears inside our head turn.<br />
-              I have developed some interest in web development recently. I have
-              worked with Flask and Django Web-Apps. <br />
-              Currently I am exploring and learning new things about
-              technologies that interest me a lot.<br /><br />Here are a few
+            <p class="content">
+              Hi, I am Pranav and I have been working as a graduate research assistant at Stony Brook University.<br />
+              My current research pertains to CPU and GPU profiling to create energy flamegraphs. <br />
+              I am open and eager to work on interesting systems related stuff.<br /><br />Here are a few
               technologies I've worked with:
-            </p> -->
-            <!-- <ul class="skills-list">
+            </p>
+            <ul class="skills-list">
+              <li>▹ C/C++</li>
+              <li>▹ Bash/Linux/perl</li>
+              <li>▹ Qemu</li>
+              <li>▹ System Verilog</li>
+              <li>▹ GTKWave</li>
               <li>▹ Python</li>
-              <li>▹ Django</li>
-              <li>▹ Flask</li>
-              <li>▹ C++</li>
-              <li>▹ SQL</li>
-              <li>▹ Java</li>
-            </ul> -->
+              <li>▹ Docker</li>
+              <li>▹ React/HTML-css-js</li>
+              <li>▹ Flask/Django</li>
+              <li>▹ Web stuff</li>
+            </ul>
 
-            <a href="https://resume.pranavdani.com" class="email-link"
-              >Resume</a
-            >
+            <a href="https://resume.pranavdani.com" class="email-link">Résumé</a>
           </div>
-          <!-- <div class="image"><img src="" alt=""></div> -->
         </div>
       </section>
+
       <section>
         <span class="big">Projects</span>
-        <br />
-        <div>
-          <div class="project">
-            <a class="medium red"></a>
-            <br />
-            <br />
-            <div class="budget">
-              <div class="content"></div>
-              <a class="image"><img width="100" height="100" alt="" /></a>
-            </div>
-          </div>
-          <div>
-            <!-- <a class="medium red" href="https://github.com/Pranav1642/Mini-Project">Hotel Management System</a> -->
-            <br />
-          </div>
+        <div class="projects">
+          <ul>
+            <li>
+              <div class="project-card">
+                <img
+                  src="assets/images/projects/riscv.png"
+                  alt="RISC-V CPU"
+                  class="project-image"
+                  loading="lazy"
+                />
+                <div class="project-info">
+                  <h2>RISC-V CPU</h2>
+                  <p>
+                    A 5-stage pipelined RISC-V CPU with support for 32-bit instructions,
+                    32 registers, and 5-stage pipeline. Support for branch prediction.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="project-card">
+                <img
+                  src="assets/images/projects/xv6.png"
+                  alt="xv6 disk logging"
+                  class="project-image"
+                  loading="lazy"
+                />
+                <div class="project-info">
+                  <h2>xv6 disk logging</h2>
+                  <p>
+                    Kernel modification to support disk logging in the xv6, reduce
+                    latency, support for crash recovery. Support small files and
+                    ftruncate syscall.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="project-card">
+                <img
+                  src="assets/images/projects/raft.png"
+                  alt="Distributed KV Store with Raft Consensus"
+                  class="project-image"
+                  loading="lazy"
+                />
+                <div class="project-info">
+                  <h2>Distributed KV Store with Raft Consensus</h2>
+                  <p>
+                    Consensus algorithm for Fault Tolerant Distributed Systems, with
+                    support for leader election and log replication along with snapshotting.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
-      <section>
-        <div class="get-in-touch">
-          <span class="big red">Get In Touch</span>
-          <div class="last">
-            I'm currently looking for internship opportunities, my inbox is
-            always open.<br />
-            Whether you have a question or just want to say hi,<br />
-            I'll try my best to get back to you!
-          </div>
-          <a href="mailto:contact@pranavdani.com" class="email-link"
-            >Say Hello</a
-          >
 
-          <ul class="contact-hide">
+      <section>
+        <div class="contact-section">
+          <span class="big red">Get In Touch</span>
+          <div class="contact-message">
+            I'm currently looking for Full-time opportunities, my inbox is always open.<br />
+            Whether you have a question or just want to say hi,<br />
+            I'll get back to you!
+          </div>
+          <a href="mailto:contact@pranavdani.com" class="email-link">Say Hello</a>
+
+          <ul class="hidden-social-links">
             <li>
               <a
                 href="https://github.com/PranavDani"
                 class="icon"
                 target="_blank"
-                alt="Pranav Dani GitHub"
-                rel="noopener"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="GitHub Pranav Dani"
               >
                 <i class="fa fa-github" aria-hidden="true"></i>
@@ -192,9 +208,7 @@
                 href="https://www.linkedin.com/in/pranav-dani"
                 class="icon"
                 target="_blank"
-                alt="Pranav Dani LinkedIn"
-                rel="noopener"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn Pranav Dani"
               >
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
@@ -206,9 +220,7 @@
                 href="https://twitter.com/PranavDani3"
                 class="icon"
                 target="_blank"
-                alt="Pranav Dani Twitter"
-                rel="noopener"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Twitter Pranav Dani"
               >
                 <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -220,29 +232,49 @@
                 href="https://resume.pranavdani.com"
                 class="icon"
                 target="_blank"
-                alt="Pranav Dani Resume"
-                rel="noopener"
-                rel="noreferrer"
-                aria-label="Resume Pranav Dani"
+                rel="noopener noreferrer"
+                aria-label="Résumé Pranav Dani"
               >
                 <i class="fa fa-file-text" aria-hidden="true"></i>
               </a>
-              <p class="desc hide">Resume</p>
+              <p class="desc hide">Résumé</p>
             </li>
           </ul>
         </div>
       </section>
-      <div class="cursor"></div>
+      <div class="mouse-cursor"></div>
     </div>
 
     <script>
-      const cursor = document.querySelector('.cursor')
-      document.addEventListener('mousemove', e => {
-        cursor.style.left = e.pageX + 'px'
-        cursor.style.top = e.pageY + 'px'
-      })
+
+      // Optimize icon hover events by looping through each contact list item
+      document.querySelectorAll('.social-links li, .hidden-social-links li').forEach(li => {
+        const icon = li.querySelector('.icon');
+        const hide = li.querySelector('.desc');
+        if (icon && hide) {
+          icon.addEventListener('mouseover', () => {
+            hide.style.transition = 'opacity 0.3s ease-in-out';
+            hide.style.opacity = 1;
+            icon.style.transition = 'transform 0.3s ease-in-out';
+            icon.style.transform = 'scale(1.1)';
+          });
+          icon.addEventListener('mouseleave', () => {
+            hide.style.opacity = 0;
+            icon.style.transform = 'scale(1)';
+          });
+        }
+      });
+
+      // Create star elements for the sky background
+      const sky = document.getElementById('sky-bg');
+      const fragment = document.createDocumentFragment();
+      for (let i = 0; i < 70; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star-element');
+        fragment.appendChild(star);
+      }
+      sky.appendChild(fragment);
     </script>
-    <script src="assets/js/file.js"></script>
-    <script src="assets/js/type.js"></script>
+    <script src="assets/js/type.js" defer></script>
   </body>
 </html>
