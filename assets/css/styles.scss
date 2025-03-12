@@ -97,13 +97,16 @@ body {
   }
   
   p {
+    margin: 0;
+    text-align: center;
     color: white;
     font-family: var(--primaryFont);
-    margin-left: -5px;
-    margin-top: 1px;
   }
   
   li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 5px 0;
   }
 }
@@ -352,6 +355,7 @@ body {
   body {
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden; // disable horizontal scrolling on mobile
     
     .main-container {
       width: 100%;
@@ -404,7 +408,7 @@ body {
           font-family: var(--primaryFont);
         }
         
-        .intro-wrapper {
+        .intro-wrapper, .about {
           padding: 0;
         }
         
@@ -458,19 +462,38 @@ body {
     justify-content: center;
     margin-left: -30px;
   }
+  
+  .about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+  
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
 }
 
 /* Intro & About */
-.intro-wrapper,
-.about {
-  padding: 0 100px;
+.intro-wrapper, .about {
+  width: 100%; // allow full width
+  padding: 0 100px; // existing padding if desired
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between; // updated from center
+  align-items: center;
   animation: fadeIn 0.5s ease-out forwards;
   font-family: var(--primaryFont);
+  // ...existing code...
+}
 
-  @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
+  .intro-wrapper, .about {
     flex-direction: column;
     align-items: center;
   }
@@ -595,3 +618,43 @@ body {
     }
   }
 }
+
+// ...existing code...
+@media only screen and (max-width: 768px) {
+  body {
+    height: auto; // allow natural document height
+    overflow-y: auto;
+  }
+  .main-container {
+    height: auto;
+  }
+  section {
+    height: auto; // let sections expand with content
+    padding: 20px; // reduced padding for mobile
+  }
+  .intro-wrapper, .about {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; // adjust padding for mobile
+  }
+  .content {
+    width: 100%; // use full width
+    font-size: 1em; // ensure readability
+  }
+  .big {
+    font-size: 6vw; // responsive text size
+  }
+  .medium {
+    font-size: 5vw;
+  }
+  .profile-img {
+    width: 80%; // adjust profile image for small screens
+    height: auto;
+  }
+  .projects {
+    padding: 0 20px; // reduce padding in the projects section
+  }
+  // ...existing mobile adjustments...
+}
+// ...existing code...
