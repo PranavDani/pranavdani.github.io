@@ -13,6 +13,14 @@
     <title>Pranav Dani</title>
   </head>
   <body>
+    <!-- Mode Switch Container -->
+    <div id="mode-switch-container">
+      <label class="switch">
+        <input type="checkbox" id="mode-toggle" aria-label="Toggle dark/light mode">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    
     <div class="main-container">
       <div id="sky-bg" class="sky-background"></div>
 
@@ -246,6 +254,11 @@
     </div>
 
     <script>
+      // Set default color mode based on browser settings
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.body.classList.add('light-mode');
+        document.getElementById('mode-toggle').checked = true;
+      }
 
       // Optimize icon hover events by looping through each contact list item
       document.querySelectorAll('.social-links li, .hidden-social-links li').forEach(li => {
@@ -274,6 +287,13 @@
         fragment.appendChild(star);
       }
       sky.appendChild(fragment);
+
+      // Mode Toggle
+      const modeToggle = document.getElementById('mode-toggle');
+      modeToggle.addEventListener('change', () => {
+        document.body.classList.toggle('light-mode');
+      });
+      
     </script>
     <script src="assets/js/type.js" defer></script>
   </body>

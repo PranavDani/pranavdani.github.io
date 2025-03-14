@@ -5,6 +5,12 @@
   --secondaryColor: white;
   --primaryFont: 'Montserrat', sans-serif;
   --monoFont: 'Roboto Mono', monospace;
+  // Normalized z-index variables
+  --z-index-sky: -1;
+  --z-index-stars: 0;
+  --z-index-content: 1;
+  --z-index-overlay: 2;
+  --z-index-mode-switch: 10;
 }
 
 /* Base Reset */
@@ -53,6 +59,7 @@ body {
         justify-content: center;
         align-items: flex-start;
         min-height: 100vh;
+        height: auto;
         padding: 0 200px;
       }
       
@@ -131,12 +138,13 @@ body {
 .sky-background {
   display: block;
   background: var(--mainColor);
+  z-index: var(--z-index-sky);
 }
 
 .star-element {
   border-radius: 50%;
   position: absolute;
-  z-index: 0;
+  z-index: var(--z-index-stars);
   animation: star linear infinite;
   background-color: rgba(255, 255, 255, 0.096);
 
@@ -198,6 +206,7 @@ body {
   margin: 0;
   font-weight: 600;
   font-family: var(--primaryFont);
+  z-index: var(--z-index-content);
 }
 
 .medium {
@@ -242,6 +251,7 @@ body {
 /* Contact Section (formerly get-in-touch) */
 .contact-section {
   justify-content: center;
+  z-index: 1;
 }
 
 /* Fixed Email */
@@ -256,6 +266,7 @@ body {
   opacity: 0;
   animation: smoothAppear 0.5s ease-out forwards;
   font-family: var(--primaryFont);
+  z-index: var(--z-index-content);
 }
 
 @keyframes smoothAppear {
@@ -389,9 +400,9 @@ body {
         }
 
         .projects ul {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          gap: 20px;
           padding: 0;
           list-style: none;
         }
@@ -477,6 +488,15 @@ body {
     text-align: center;
     padding: 20px;
   }
+  
+  .sky-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
 }
 
 /* Intro & About */
@@ -516,7 +536,7 @@ body {
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
-  z-index: 2;
+  z-index: var(--z-index-overlay);
 
   @media only screen and (max-width: 768px) {
     width: 80%; // Adjust image width to fit smaller displays
@@ -527,21 +547,22 @@ body {
 
 // Projects Section modifications
 .projects {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  flex-wrap: nowrap;
   justify-content: space-evenly;
   padding: 0;
   list-style: none;
-  max-height: 70vh; // restrict height so section remains 100vh
+  height: auto; // allow height to scale based on content
   overflow-y: auto; // scroll within projects when content exceeds
   
   ul {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: space-evenly;
     padding: 0;
     list-style: none;
+    min-height: 60vh;
   }
 
   @media screen and (max-width: 768px) {
@@ -557,7 +578,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   padding: 20px;
-  z-index: 2;
+  z-index: var(--z-index-overlay);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   max-width: 300px;
@@ -657,4 +678,110 @@ body {
   }
   // ...existing mobile adjustments...
 }
+
+/*------------------------------------------------------------------------------
+  14. Light Mode Overrides
+------------------------------------------------------------------------------*/
+body.light-mode {
+  --mainColor: white;
+  --secondaryColor: black;
+}
+
+/* Override elements in light mode */
+body.light-mode .sky-background {
+  background: var(--mainColor);
+}
+
+body.light-mode .star-element {
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+body.light-mode, 
+body.light-mode * {
+  color: var(--secondaryColor) !important;
+}
+
+body.light-mode .stand {
+  color: var(--secondaryColor);
+}
+
+body.light-mode .stand:hover {
+  color: red !important;
+}
+
+body.light-mode .project-card {
+  background: var(--mainColor);
+  border-color: #ccc;
+  color: var(--secondaryColor);
+}
+
+/* Invert SVG colors in social-links when in light mode */
+body.light-mode .social-links svg,
+body.light-mode .social-links img[src$=".svg"] {
+  filter: invert(1);
+}
+
+/* Light Mode Overrides for email-link */
+body.light-mode .email-link {
+  border-color: black;
+}
+body.light-mode .email-link:hover {
+  background: rgba(200, 200, 200, 0.5);
+}
+
+/*------------------------------------------------------------------------------
+  15. Mode Switch Styles
+------------------------------------------------------------------------------*/
+#mode-switch-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: var(--z-index-mode-switch);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #9c9c9c2c;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #000000;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
 // ...existing code...
