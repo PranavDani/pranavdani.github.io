@@ -48,6 +48,7 @@ body {
         justify-content: center;
         align-items: flex-start;
         min-height: 100vh;
+        height: auto;
         padding: 0 100px;
       }
       
@@ -71,6 +72,7 @@ body {
         justify-content: center;
         align-items: center;
         min-height: 100vh;
+        height: auto;
         text-align: center;
       }
       
@@ -387,6 +389,7 @@ body {
           align-items: start;
           padding: 20px;
           // max-height: 100vh;
+          height: auto;
           overflow-y: auto;
         }
 
@@ -396,15 +399,17 @@ body {
           justify-content: center;
           align-items: center;
           padding: 0 25px;
+          height: auto;
           text-align: left;
         }
 
         .projects ul {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          display: flex;
+          flex-direction: column;
           gap: 20px;
           padding: 0;
           list-style: none;
+          height: auto;
         }
         
         &:nth-child(5) {
@@ -412,6 +417,7 @@ body {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          height: auto;
         }
         
         h1 {
@@ -471,7 +477,6 @@ body {
     display: flex;
     padding-top: 100px;
     justify-content: center;
-    margin-left: -30px;
   }
   
   .about {
@@ -517,6 +522,10 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
+  .skills-list {
+    text-align: left;
+  }
 }
 
 /* Profile & Projects */
@@ -560,9 +569,10 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-evenly;
-    padding: 0;
+    padding-top: 50px;
     list-style: none;
-    min-height: 60vh;
+    min-height: 75vh;
+    min-width: 70vw;
   }
 
   @media screen and (max-width: 768px) {
@@ -619,6 +629,16 @@ body {
     border-radius: 4px;
     margin-bottom: 15px;
   }
+
+  .project-highlight {
+    background-color: #4242425e;
+    width: fit-content;
+    padding: 0.4em 1em;
+    margin: 2em 0 1em 0;
+    border-radius: 1em;
+    line-height: 1.5em;
+    font: 1em var(--monoFont);
+  }
   
   .project-image {
     display: block;
@@ -662,6 +682,7 @@ body {
   .content {
     width: 100%; // use full width
     font-size: 1em; // ensure readability
+    text-align: left; // align content from left to right
   }
   .big {
     font-size: 6vw; // responsive text size
@@ -685,6 +706,8 @@ body {
 body.light-mode {
   --mainColor: #e0e0e0;
   --secondaryColor: black;
+  background: var(--mainColor);
+  background-color: var(--mainColor);
 }
 
 /* Override elements in light mode */
