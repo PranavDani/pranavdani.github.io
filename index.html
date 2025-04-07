@@ -11,20 +11,47 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <title>Pranav Dani</title>
+
+    <meta
+      name="keywords"
+      content="Pranav Dani, systems, software, architecture, otc, our tech community"
+    />
+    <meta name="description" content="Systems • Software • Architecture" />
+    <meta name="author" content="Pranav Dani" />
+    <meta property="og:site_name" content="Pranav Dani" />
+    <meta property="og:title" content="Pranav Dani's Résumé" />
+    <meta property="og:type" content="website" />
+
   </head>
   <body>
-    <!-- Mode Switch Container -->
-    <div id="mode-switch-container">
-      <label class="switch">
-        <input type="checkbox" id="mode-toggle" aria-label="Toggle dark/light mode">
-        <span class="slider round"></span>
-      </label>
+    <div id="top-bar">
+      <div id="mode-switch-container">
+        <div class="mode-toggle" aria-label="Toggle dark/light mode">
+          <div class="icon"></div>
+        </div>
+      </div>
+      <div id="hamburger-menu-container">
+        <div class="hamburger-icon" aria-label="Toggle menu">
+          <!-- three bars -->
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="hamburger-nav">
+          <ul>
+            <li><a href="#home" class="menu-link">Home</a></li>
+            <li><a href="#about" class="menu-link">About</a></li>
+            <li><a href="#projects" class="menu-link">Projects</a></li>
+            <li><a href="#contact" class="menu-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
     
     <div class="main-container">
       <div id="sky-bg" class="sky-background"></div>
 
-      <section>
+      <section id="home">
         <div class="intro-wrapper">
           <div class="intro-content">
             <span class="small">Hi, my name is</span>
@@ -111,7 +138,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="about">
         <div class="about">
           <div>
             <span class="big">About Me</span>
@@ -130,8 +157,6 @@
               <li>▹ GTKWave</li>
               <li>▹ Python</li>
               <li>▹ Docker</li>
-              <li>▹ React/HTML-css-js</li>
-              <li>▹ Flask/Django</li>
               <li>▹ Web stuff</li>
             </ul>
 
@@ -140,7 +165,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="projects">
         <span class="big">Projects</span>
         <div class="projects">
           <ul>
@@ -199,11 +224,47 @@
                 <div class="project-highlight"><small>C++</small></div>
               </div>
             </li>
+            <li>
+              <div class="project-card">
+                <img
+                  src="assets/images/projects/nyc.png"
+                  alt="NYC Housing Visualization"
+                  class="project-image"
+                  loading="lazy"
+                />
+                <div class="project-info">
+                  <h2><a href="https://github.com/raunaqpahwa/cse564" target="_blank" rel="noopener noreferrer">NYC Housing Visualization</a></h2>
+                  <p>
+                    A web application to visualize NYC housing data using D3.js and Flask.
+                    The app allows users to filter and explore housing data interactively.
+                  </p>
+                </div>
+                <div class="project-highlight"><small>D3.js, Flask</small></div>
+              </div>
+            </li>
+            <li>
+              <div class="project-card">
+                <img
+                  src="assets/images/projects/expense.png"
+                  alt="Expense Tracker"
+                  class="project-image"
+                  loading="lazy"
+                />
+                <div class="project-info">
+                  <h2><a href="https://github.com/PranavDani/Expense-Tracker" target="_blank" rel="noopener noreferrer">Expense Tracker</a></h2>
+                  <p>
+                    A Flask based web application which was hosted on Heroku with a PostgreSQL database.
+                    Visualize spending habits with charts and file exports in CSV and Excel format.
+                  </p>
+                </div>
+                <div class="project-highlight"><small>Flask, Heroku, PostgreSQL</small></div>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
 
-      <section>
+      <section id="contact">
         <div class="contact-section">
           <span class="big red">Get In Touch</span>
           <div class="contact-message">
@@ -269,27 +330,42 @@
     </div>
 
     <script>
-      // Set default color mode based on browser settings
+      const modeToggle = document.querySelector('.mode-toggle');
+      
+      // Set initial state from browser preference
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
         document.body.classList.add('light-mode');
-        document.getElementById('mode-toggle').checked = true;
+        modeToggle.classList.add('sun');
       }
-
-      // Optimize icon hover events by looping through each contact list item
-      document.querySelectorAll('.social-links li, .hidden-social-links li').forEach(li => {
-        const icon = li.querySelector('.icon');
-        const hide = li.querySelector('.desc');
-        if (icon && hide) {
-          icon.addEventListener('mouseover', () => {
-            hide.style.transition = 'opacity 0.3s ease-in-out';
-            hide.style.opacity = 1;
-            icon.style.transition = 'transform 0.3s ease-in-out';
-            icon.style.transform = 'scale(1.1)';
-          });
-          icon.addEventListener('mouseleave', () => {
-            hide.style.opacity = 0;
-            icon.style.transform = 'scale(1)';
-          });
+      
+      modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        modeToggle.classList.toggle('sun');
+      });
+      
+      // Optimized event delegation for social icon hover events
+      document.addEventListener('mouseover', (e) => {
+        const icon = e.target.closest('.icon');
+        if (icon && (icon.closest('.social-links') || icon.closest('.hidden-social-links'))) {
+          const li = icon.closest('li');
+          const desc = li ? li.querySelector('.desc') : null;
+          if (desc) {
+            desc.style.transition = 'opacity 0.3s ease-in-out';
+            desc.style.opacity = 1;
+          }
+          icon.style.transition = 'transform 0.3s ease-in-out';
+          icon.style.transform = 'scale(1.1)';
+        }
+      });
+      document.addEventListener('mouseout', (e) => {
+        const icon = e.target.closest('.icon');
+        if (icon && (icon.closest('.social-links') || icon.closest('.hidden-social-links'))) {
+          const li = icon.closest('li');
+          const desc = li ? li.querySelector('.desc') : null;
+          if (desc) {
+            desc.style.opacity = 0;
+          }
+          icon.style.transform = 'scale(1)';
         }
       });
 
@@ -302,11 +378,24 @@
         fragment.appendChild(star);
       }
       sky.appendChild(fragment);
-
-      // Mode Toggle
-      const modeToggle = document.getElementById('mode-toggle');
-      modeToggle.addEventListener('change', () => {
-        document.body.classList.toggle('light-mode');
+      
+      // Hamburger Menu Script
+      const hamburgerIcon = document.querySelector('.hamburger-icon');
+      const hamburgerNav = document.querySelector('.hamburger-nav');
+      hamburgerIcon.addEventListener('click', () => {
+        hamburgerIcon.classList.toggle('active'); // toggles animated state
+        hamburgerNav.classList.toggle('active');
+      });
+      document.querySelectorAll('.menu-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+          hamburgerNav.classList.remove('active');
+          hamburgerIcon.classList.remove('active');
+        });
       });
       
     </script>
