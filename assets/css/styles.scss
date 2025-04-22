@@ -157,17 +157,19 @@ body {
       height: $size;
       animation-duration: random(30) + 15s;
       animation-delay: random(40) - 40s;
-      top: random(101) - 1vh;
+      // Spread stars vertically: random horizontal position; fixed at bottom
+      left: random(101) - 1vw;
+      top: 100vh;
     }
   }
 }
 
 @keyframes star {
   from {
-    transform: translate3d(-100%, 0, 1px);
+    transform: translateY(0);
   }
   to {
-    transform: translate3d(100vw, 0, 1px);
+    transform: translateY(-200vh);
   }
 }
 
@@ -405,7 +407,7 @@ body {
 
         .projects ul {
           display: flex;
-          flex-direction: column;
+          flex-direction: flex;
           gap: 20px;
           padding: 0;
           list-style: none;
@@ -573,12 +575,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-evenly;
-    padding-top: 50px;
+    justify-content: flex-start;
     list-style: none;
     min-height: 75vh;
     min-width: 70vw;
+    padding-top: 50px;
     padding-bottom: 20px;
+    padding-left: 20px;
   }
 
   @media screen and (max-width: 768px) {
@@ -661,7 +664,8 @@ body {
     }
 
     @media screen and (max-width: 768px) {
-      display: none;
+      // Removed hiding of images on mobile:
+      // display: none;
     }
   }
 }

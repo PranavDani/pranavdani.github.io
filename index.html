@@ -171,12 +171,14 @@
           <ul>
             <li>
               <div class="project-card">
-                <img
-                  src="assets/images/projects/riscv.png"
-                  alt="RISC-V CPU"
-                  class="project-image"
-                  loading="lazy"
-                />
+                <a href="https://github.com/PranavDani/RISCV" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="assets/images/projects/riscv.png"
+                    alt="RISC-V CPU"
+                    class="project-image"
+                    loading="lazy"
+                  />
+                </a>
                 <div class="project-info">
                   <h2><a href="https://github.com/PranavDani/RISCV" target="_blank" rel="noopener noreferrer">RISC-V CPU</a></h2>
                   <p>
@@ -189,12 +191,14 @@
             </li>
             <li>
               <div class="project-card">
-                <img
-                  src="assets/images/projects/xv6.png"
-                  alt="xv6 disk logging"
-                  class="project-image"
-                  loading="lazy"
-                />
+                <a href="https://github.com/amoghdadhich/CSE506-Spring-2024.git" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="assets/images/projects/xv6.png"
+                    alt="xv6 disk logging"
+                    class="project-image"
+                    loading="lazy"
+                  />
+                </a>
                 <div class="project-info">
                   <h2><a href="https://github.com/amoghdadhich/CSE506-Spring-2024.git" target="_blank" rel="noopener noreferrer">xv6 disk logging</a></h2>
                   <p>
@@ -208,12 +212,14 @@
             </li>
             <li>
               <div class="project-card">
-                <img
-                  src="assets/images/projects/raft.png"
-                  alt="Distributed KV Store with Raft Consensus"
-                  class="project-image"
-                  loading="lazy"
-                />
+                <a href="https://github.com/PranavDani" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="assets/images/projects/raft.png"
+                    alt="Distributed KV Store with Raft Consensus"
+                    class="project-image"
+                    loading="lazy"
+                  />
+                </a>
                 <div class="project-info">
                   <h2><a href="https://github.com/PranavDani" target="_blank" rel="noopener noreferrer">Distributed KV Store with Raft Consensus</a></h2>
                   <p>
@@ -226,12 +232,14 @@
             </li>
             <li>
               <div class="project-card">
-                <img
-                  src="assets/images/projects/nyc.png"
-                  alt="NYC Housing Visualization"
-                  class="project-image"
-                  loading="lazy"
-                />
+                <a href="https://github.com/raunaqpahwa/cse564" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="assets/images/projects/nyc.png"
+                    alt="NYC Housing Visualization"
+                    class="project-image"
+                    loading="lazy"
+                  />
+                </a>
                 <div class="project-info">
                   <h2><a href="https://github.com/raunaqpahwa/cse564" target="_blank" rel="noopener noreferrer">NYC Housing Visualization</a></h2>
                   <p>
@@ -244,12 +252,14 @@
             </li>
             <li>
               <div class="project-card">
-                <img
-                  src="assets/images/projects/expense.png"
-                  alt="Expense Tracker"
-                  class="project-image"
-                  loading="lazy"
-                />
+                <a href="https://github.com/PranavDani/Expense-Tracker" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="assets/images/projects/expense.png"
+                    alt="Expense Tracker"
+                    class="project-image"
+                    loading="lazy"
+                  />
+                </a>
                 <div class="project-info">
                   <h2><a href="https://github.com/PranavDani/Expense-Tracker" target="_blank" rel="noopener noreferrer">Expense Tracker</a></h2>
                   <p>
@@ -386,16 +396,29 @@
         hamburgerIcon.classList.toggle('active'); // toggles animated state
         hamburgerNav.classList.toggle('active');
       });
-      document.querySelectorAll('.menu-link').forEach(link => {
-        link.addEventListener('click', (e) => {
+      document.addEventListener('click', (e) => {
+        // Handle menu link clicks
+        const menuLink = e.target.closest('.menu-link');
+        if (menuLink) {
           e.preventDefault();
-          const target = document.querySelector(link.getAttribute('href'));
+          const target = document.querySelector(menuLink.getAttribute('href'));
           if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth' });
           }
           hamburgerNav.classList.remove('active');
           hamburgerIcon.classList.remove('active');
-        });
+          return; // Skip further processing for menu links
+        }
+        
+        // Close the hamburger menu if click occurred outside it
+        if (
+          hamburgerNav.classList.contains('active') &&
+          !hamburgerNav.contains(e.target) &&
+          !hamburgerIcon.contains(e.target)
+        ) {
+          hamburgerNav.classList.remove('active');
+          hamburgerIcon.classList.remove('active');
+        }
       });
       
     </script>
