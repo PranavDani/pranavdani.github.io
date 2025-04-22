@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/assets/images/icon.png" rel="icon" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/goku.css" type="text/css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -77,6 +78,15 @@
               class="profile-img"
               loading="lazy"
             />
+            <div class="goku-container">
+              <div id="goku-bg"></div>
+              <div id="goku">
+                <div class="head-goku"></div>
+                <div class="body-goku"></div>
+                <div class="leg-goku"></div>
+                <div class="shadow"></div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -418,6 +428,78 @@
         ) {
           hamburgerNav.classList.remove('active');
           hamburgerIcon.classList.remove('active');
+        }
+      });
+
+      // Fade transitions between profile image and Goku container
+      const profileImg = document.querySelector('.profile-img');
+      const gokuContainer = document.querySelector('.goku-container');
+      const gokuBg = document.getElementById('goku-bg');
+      let clickTimeout;
+      const singleClickDelay = 300; // delay to distinguish single from double click
+
+      function resetGoku() {
+        const head = gokuContainer.querySelector('.head-goku-instinct');
+        if (head) {
+          head.classList.replace('head-goku-instinct', 'head-goku');
+        }
+        gokuBg.classList.remove('active');
+      }
+
+      // On clicking the profile image, fade it out and reveal Goku
+      profileImg.addEventListener('click', () => {
+        if (window.innerWidth < 768) return; // Skip on mobile
+        profileImg.classList.add('fade-out');
+        setTimeout(() => {
+          profileImg.style.visibility = 'hidden';
+          profileImg.classList.remove('fade-out');
+          gokuContainer.style.visibility = 'visible';
+          gokuContainer.classList.add('fade-in');
+          gokuContainer.style.pointerEvents = 'auto';
+          setTimeout(() => {
+        gokuContainer.classList.remove('fade-in');
+          }, 500);
+        }, 500);
+      });
+
+      // Handle single click to revert fade (with delay to allow dblclick detection)
+      gokuContainer.addEventListener('click', () => {
+        if (window.innerWidth < 768) return;
+        if (clickTimeout) return;
+        clickTimeout = setTimeout(() => {
+          clickTimeout = null;
+          gokuContainer.classList.add('fade-outGoku');
+          setTimeout(() => {
+        gokuContainer.style.visibility = 'hidden';
+        gokuContainer.classList.remove('fade-outGoku');
+        gokuContainer.style.pointerEvents = 'none';
+        profileImg.style.visibility = 'visible';
+        profileImg.classList.add('fade-in');
+        resetGoku();
+        setTimeout(() => {
+          profileImg.classList.remove('fade-in');
+        }, 500);
+          }, 500);
+        }, singleClickDelay);
+      });
+
+      // On double click, toggle the Goku Instinct transformation (only in dark mode)
+      gokuContainer.addEventListener('dblclick', () => {
+        if (window.innerWidth < 768) return;
+        if (document.body.classList.contains('light-mode')) return;
+        clearTimeout(clickTimeout);
+        clickTimeout = null;
+        const head = gokuContainer.querySelector('.head-goku') || gokuContainer.querySelector('.head-goku-instinct');
+        if (!gokuBg.classList.contains('active')) {
+          if (head && head.classList.contains('head-goku')) {
+        head.classList.replace('head-goku', 'head-goku-instinct');
+          }
+          gokuBg.classList.add('active');
+        } else {
+          if (head && head.classList.contains('head-goku-instinct')) {
+        head.classList.replace('head-goku-instinct', 'head-goku');
+          }
+          gokuBg.classList.remove('active');
         }
       });
       

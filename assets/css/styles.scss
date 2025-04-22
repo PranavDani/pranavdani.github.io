@@ -509,6 +509,16 @@ body {
   #hamburger-menu-container {
     display: none;
   }
+  
+  // Scale goku accordingly in mobile mode
+  #goku {
+    transform: scale(0.3) !important;
+  }
+
+  // ...existing mobile adjustments...
+  .goku-container {
+    display: none !important;
+  }
 }
 
 /* Intro & About */
