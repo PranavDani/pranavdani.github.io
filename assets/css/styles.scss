@@ -563,7 +563,7 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
   z-index: var(--z-index-overlay);
-
+  cursor: pointer; // added to make profile pic clickable
   @media only screen and (max-width: 768px) {
     width: 80%; // Adjust image width to fit smaller displays
     height: auto;

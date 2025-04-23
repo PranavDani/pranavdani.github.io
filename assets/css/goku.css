@@ -128,6 +128,26 @@
     }
 }
 
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes scaleDown {
+    from {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
 .profile-img.flip {
     animation: flipAnimation 1s forwards;
 }
@@ -162,6 +182,8 @@
     /* use visibility instead of display */
     pointer-events: none;
     transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
+    /* added to make Goku clickable */
 }
 
 .goku-container.show {
@@ -177,8 +199,16 @@
     animation: fadeOutGoku 0.5s forwards;
 }
 
+.scale-up {
+    animation: scaleUp 0.5s ease forwards;
+}
+
+.scale-down {
+    animation: scaleDown 0.5s ease forwards;
+}
+
 #goku {
-    margin-top: 30px;
+    margin-top: 60px;
     background: #fff;
     position: relative;
     -ms-transform: scale(0.5);
@@ -190,7 +220,7 @@
 
 #goku-bg {
     position: absolute;
-    top: -26%;
+    top: -20%;
     left: 50%;
     transform: translateX(-50%) scale(0.9);
     width: 100%;
@@ -213,7 +243,7 @@
     width: 10px;
     height: 10px;
     background: #006e8a;
-    box-shadow: -120px -10px #006e8a, -110px -10px #006e8a, -100px -10px #006e8a, -90px -10px #006e8a, -80px -10px #006e8a, -70px -10px #006e8a, -60px -10px #006e8a, -50px -10px #006e8a, -40px -10px #006e8a, -30px -10px #006e8a, -20px -10px #006e8a, -10px -10px #006e8a, 0px -10px #006e8a, 10px -10px #006e8a, 20px -10px #006e8a, 30px -10px #006e8a, 40px -10px #006e8a, 50px -10px #006e8a, 60px -10px #006e8a, -130px 0px #006e8a, -120px 0px #006e8a, -110px 0px #006e8a, -100px 0px #006e8a, -90px 0px #006e8a, -80px 0px #006e8a, -70px 0px #006e8a, -60px 0px #006e8a, -50px 0px #006e8a, -40px 0px #006e8a, -30px 0px #006e8a, -20px 0px #006e8a, -10px 0px #006e8a, 0px 0px #006e8a, 10px 0px #006e8a, 20px 0px #006e8a, 30px 0px #006e8a, 40px 0px #006e8a, 50px 0px #006e8a, 60px 0px #006e8a, -130px 10px #006e8a, -120px 10px #006e8a, -110px 10px #006e8a, -100px 10px #006e8a, -90px 10px #006e8a, -80px 10px #006e8a, -70px 10px #006e8a, -60px 10px #006e8a, -50px 10px #006e8a, -40px 10px #006e8a, -30px 10px #006e8a, -20px 10px #006e8a, -10px 10px #006e8a, 0px 10px #006e8a, 10px 10px #006e8a, 20px 10px #006e8a, 30px 10px #006e8a, 40px 10px #006e8a, 50px 10px #006e8a, 60px 10px #006e8a, -130px 20px #006e8a, -120px 20px #006e8a, -110px 20px #006e8a, -100px 20px #006e8a, -90px 20px #006e8a, -80px 20px #006e8a, -70px 20px #006e8a, -60px 20px #006e8a, -50px 20px #006e8a, -40px 20px #006e8a, -30px 20px #006e8a, -10px 20px #006e8a, 0px 20px #006e8a, 10px 20px #006e8a, 20px 20px #006e8a, 30px 20px #006e8a, 40px 20px #006e8a, 50px 20px #006e8a, 60px 20px #006e8a, 70px 20px #006e8a, -120px 30px #006e8a, -110px 30px #006e8a, -100px 30px #006e8a, -90px 30px #006e8a, -80px 30px #006e8a, -70px 30px #006e8a, -60px 30px #006e8a, -50px 30px #006e8a, -10px 0px transparent;
+    box-shadow: -120px -10px #006e8a, -110px -10px #006e8a, -100px -10px #006e8a, -90px -10px #006e8a, -80px -10px #006e8a, -70px -10px #006e8a, -60px -10px #006e8a, -50px -10px #006e8a, -40px -10px #006e8a, -30px -10px #006e8a, -20px -10px #006e8a, -10px -10px #006e8a, 0px -10px #006e8a, 10px -10px #006e8a, 20px -10px #006e8a, 30px -10px #006e8a, 40px -10px #006e8a, 50px -10px #006e8a, 60px -10px #006e8a, -130px 0px #006e8a, -120px 0px #006e8a, -110px 0px #006e8a, -100px 0px #006e8a, -90px 0px #006e8a, -80px 0px #006e8a, -70px 0px #006e8a, -60px 0px #006e8a, -50px 0px #006e8a, -40px 0px #006e8a, -30px 0px #006e8a, -20px 0px #006e8a, -10px 0px #006e8a, 0px 0px #006e8a, 10px 0px #006e8a, 20px 0px #006e8a, 30px 0px #006e8a, 40px 0px #006e8a, 50px 0px #006e8a, 60px 0px #006e8a, -130px 10px #006e8a, -120px 10px #006e8a, -110px 10px #006e8a, -100px 10px #006e8a, -90px 10px #006e8a, -80px 10px #006e8a, -70px 10px #006e8a, -60px 10px #006e8a, -50px 10px #006e8a, -40px 10px #006e8a, -30px 10px #006e8a, -20px 10px #006e8a, -10px 10px #006e8a, 0px 10px #006e8a, 10px 10px #006e8a, 20px 10px #006e8a, 30px 10px #006e8a, 40px 10px #006e8a, 50px 10px #006e8a, 60px 10px #006e8a, -130px 20px #006e8a, -120px 20px #006e8a, -110px 20px #006e8a, -100px 20px #006e8a, -90px 20px #006e8a, -80px 20px #006e8a, -70px 20px #006e8a, -60px 20px #006e8a, -50px 20px #006e8a, -40px 20px #006e8a, -30px 20px #006e8a, -10px 20px #006e8a, 0px 20px #006e8a, 10px 20px #006e8a, 20px 20px #006e8a, 30px 20px #006e8a, 40px 20px #006e8a, 50px 20px #006e8a, 60px 20px #006e8a, 70px 20px #006e8a, -120px 30px #00c2ff, -110px 30px #00c2ff, -100px 30px #00c2ff, -90px 30px #00c2ff, -80px 30px #00c2ff, -70px 30px #00c2ff, -60px 30px #00c2ff, -50px 30px #00c2ff, -10px 0px transparent;
 }
 
 .leg-goku {
