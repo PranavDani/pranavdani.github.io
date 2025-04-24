@@ -55,21 +55,19 @@
       <section id="home">
         <div class="intro-wrapper">
           <div class="intro-content">
-            <span class="small">Hi, my name is</span>
             <br />
-            <span class="big">Pranav Dani.</span>
+            <div class="big">Pranav Dani</div>
             <br /><br />
+            <!-- <span class="small">Hi, my name is</span> -->
             <p class="content">
-              I'm a Masters student in Computer Science at Stony Brook University based in New York, USA.
-            </p>
-            <p class="content">
-              I love computers. CPUs, OS, Distributed Systems, you name it. 
-            </p>
-            <p class="content">
-              I also love running, music and reading.
-            </p>
+              Computer Science at Stony Brook University based out of New York, USA
               <br />
-            <a href="mailto:contact@pranavdani.com" class="email-link">Get In Touch</a>
+              <br />
+              I love computers. CPUs, OS, Distributed Systems — you name it
+              <br />
+              <br />
+              I also love running, music and reading
+            </p>
           </div>
           <div class="profile-pic-wrapper">
             <img
@@ -153,10 +151,12 @@
             <span class="big">About Me</span>
             <br /><br />
             <p class="content">
-              Hi, I am Pranav and I have been working as a graduate research assistant at Stony Brook University.<br />
+              Working as a graduate research assistant at Stony Brook University.
+              <br />
+              <br />
               My current research pertains to CPU and GPU profiling to create energy flamegraphs. <br />
-              I am open and eager to work on interesting systems related stuff.<br /><br />Here are a few
-              technologies I've worked with:
+              <br /><br />
+              Technologies I have worked with:
             </p>
             <ul class="skills-list">
               <li>▹ C/C++</li>
@@ -454,9 +454,11 @@
         if (headNormal) {
           headNormal.classList.replace('head-goku', 'head-goku-instinct');
         }
-        gokuBg.classList.add('active');
-        gokuContainer.classList.remove('scale-down');
-        gokuContainer.classList.add('scale-up');
+        setTimeout(() => {
+          gokuBg.classList.add('active');
+          gokuContainer.classList.remove('scale-down');
+          gokuContainer.classList.add('scale-up');
+        }, 100);
       };
 
       // Revert Goku container from instinct mode (scale down)
@@ -486,7 +488,7 @@
           instinctTimeout = setTimeout(() => {
         transformToInstinct();
         instinctTimeout = null;
-          }, 3000);
+          }, 1000);
 
           setTimeout(() => {
         gokuContainer.classList.remove('fade-in');

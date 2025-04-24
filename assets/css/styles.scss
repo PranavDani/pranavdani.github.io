@@ -61,7 +61,7 @@ body {
         align-items: flex-start;
         min-height: 100vh;
         height: auto;
-        padding: 0 200px;
+        padding: 0 150px;
       }
       
       &:nth-child(5) {
@@ -91,7 +91,9 @@ body {
 
 /* Social Links Section */
 .social-links {
-  position: absolute;
+  position: fixed; // changed from absolute so it stays fixed
+  top: 100px; // adjust vertical spacing as desired
+  left: 20px; // same left alignment as the hamburger menu
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -248,7 +250,7 @@ body {
 .content {
   color: #cccccc;
   font-weight: 400;
-  width: 70%;
+  // width: 70%;
   font-family: var(--primaryFont);
 }
 
@@ -260,9 +262,9 @@ body {
 
 /* Fixed Email */
 .fixed-email-section {
-  position: absolute;
-  right: 0;
-  margin-right: 100px;
+  position: fixed; // changed from absolute so it stays fixed
+  top: 100px; // adjust vertical spacing as desired
+  right: 20px; // same right alignment as the mode switch
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -462,7 +464,6 @@ body {
   .content,
   .contact-message {
     font-size: 15px;
-    width: 80%;
   }
   
   .contact-section {
@@ -506,8 +507,19 @@ body {
     height: 100vh;
     z-index: 0;
   }
+  
+  // Remove or comment out the rule hiding the hamburger menu:
+  // #hamburger-menu-container {
+  //   display: none;
+  // }
+  
+  // Force the hamburger menu (if needed) to be visible and fixed
   #hamburger-menu-container {
-    display: none;
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: var(--z-index-mode-switch);
   }
   
   // Scale goku accordingly in mobile mode
@@ -519,12 +531,29 @@ body {
   .goku-container {
     display: none !important;
   }
+
+  // Override fixed positioning so toggles scroll with the page
+  #mode-switch-container,
+  #hamburger-menu-container {
+    position: absolute !important;
+  }
+
+  .intro-content .big {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.intro-text {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Intro & About */
 .intro-wrapper, .about {
   width: 100%; // allow full width
-  padding: 0 100px; // existing padding if desired
+  padding: 0 50px; // existing padding if desired
   display: flex;
   flex-direction: row;
   justify-content: space-between; // updated from center
@@ -776,7 +805,7 @@ body.light-mode .email-link:hover {
   15. Mode Switch Styles
 ------------------------------------------------------------------------------*/
 #mode-switch-container {
-  position: absolute;
+  position: fixed; // already fixed; ensure right alignment
   top: 20px;
   right: 20px;
   z-index: var(--z-index-mode-switch);
@@ -841,7 +870,7 @@ body.light-mode .email-link:hover {
 
 /* Hamburger Menu Styles */
 #hamburger-menu-container {
-  position: fixed;
+  position: fixed; // ensure it stays fixed
   top: 20px;
   left: 20px;
   z-index: var(--z-index-mode-switch);
